@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import { Route, Routes } from 'react-router-dom'
 import Test from './pages/TestComponent'
 import Register from './pages/Register'
+// eslint-disable-next-line import/no-unresolved
+import Login from './pages/Login'
 
 // interface Bird {
 //   name: string
@@ -58,6 +60,7 @@ function App() {
       <Routes>
         <Route path='test' element={<Test />} />
         <Route path='register' element={<Register />} />
+        <Route path='login' element={<Login />} />
       </Routes>
       <ToastContainer />
     </div>

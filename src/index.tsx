@@ -4,10 +4,11 @@ import App from './App'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import bird_app from './store/birds/birds'
-import { QueryClient, QueryClientProvider } from 'react-query'
 
 const store = createStore(bird_app)
 import { BrowserRouter } from 'react-router-dom'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Provider store={store}>
           <App />
         </Provider>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

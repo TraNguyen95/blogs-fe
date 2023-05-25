@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import authApi from '../../apis/auth.api'
 import { toast } from 'react-toastify'
-import { useMutation } from 'react-query'
+import { useMutation } from '@tanstack/react-query'
+import { Button, Input } from 'antd'
 
 interface IRegister {
   email: string
@@ -57,10 +58,10 @@ export default function Register() {
   return (
     <div>
       <label htmlFor='email'>email</label>
-      <input name='email' onChange={handleChange} id='email' type='text' />
+      <Input name='email' onChange={handleChange} id='email' type='text' />
       <label htmlFor='password'>password</label>
-      <input name='password' onChange={handleChange} id='password' type='text' />
-      <button onClick={handleSubmit}>Submit</button>
+      <Input name='password' onChange={handleChange} id='password' type='text' />
+      <Button onClick={handleSubmit}>Submit</Button>
     </div>
   )
 }
