@@ -1,10 +1,13 @@
 // import { useState } from 'react'
 // import { useDispatch, useSelector } from 'react-redux'
+import { ToastContainer } from 'react-toastify'
 import './assets/styles/app.css'
 import './assets/styles/app.scss'
+import 'react-toastify/dist/ReactToastify.css'
 // import { addBird, incrementBird } from './store/birds/birds'
 import { Route, Routes } from 'react-router-dom'
 import Test from './pages/TestComponent'
+import Register from './pages/Register'
 
 // interface Bird {
 //   name: string
@@ -54,7 +57,9 @@ function App() {
       </ul> */}
       <Routes>
         <Route path='test' element={<Test />} />
+        <Route path='register' element={<Register />} />
       </Routes>
+      <ToastContainer />
     </div>
   )
 }
